@@ -140,8 +140,11 @@ public class LinkedListTDA<E> implements ListTDA<E> {
             switch(low){
                 case 'b' -> {
                     System.out.println("Galleta removida: "+get(indice));
+                    curr = curr.getNext();
                     delete(indice);}
-                case 'm' -> curr = curr.getNext();
+                case 'm' ->{
+                    curr = curr.getNext();
+                    indice++;}
                 case 's' -> {
                 }
             }
