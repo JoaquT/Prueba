@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import uni.aed.tda.ArrayListTDA.ArrayListTDA;
+import uni.aed.tda.LinkedListTDA.LinkedListTDA;
 import uni.aed.tda.ListTDA.ListTDA;
 
 
@@ -13,7 +13,7 @@ public class FortuneCookieFile {
     private ListTDA<String> lista;
 
     public FortuneCookieFile() {
-        lista = new ArrayListTDA<>();                
+        lista = new LinkedListTDA<>();                
         loadFortunesFromFile("fortunes.txt");
         
     }

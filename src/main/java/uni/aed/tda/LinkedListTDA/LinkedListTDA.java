@@ -1,7 +1,9 @@
 package uni.aed.tda.LinkedListTDA;
 import uni.aed.tda.ListTDA.IteratorTDA;
 import uni.aed.tda.ListTDA.ListTDA;
+import java.util.Scanner;
 public class LinkedListTDA<E> implements ListTDA<E> {
+    public static Scanner sc = new Scanner(System.in);
     public static final int NO_ENONTRADO=-1;
     private Nodo<E> head;
     private Nodo<E> cola;
@@ -41,6 +43,9 @@ public class LinkedListTDA<E> implements ListTDA<E> {
         if(index==count)
             cola=newNodo;
         count++;
+    }
+    public E obtenercoladato(){
+        return cola.getData();
     }
     protected void revisaPosInsercion(int index){
         if(index<0)
@@ -122,6 +127,26 @@ public class LinkedListTDA<E> implements ListTDA<E> {
         }
         count--;
         return nodoDelete.getData();
+    }
+    //Implementacion de la segunda opcion para borrar fortune cookie
+    public void removeSegundaOpcion(){
+        Nodo<E>curr = head;
+        int indice = 0;
+        while(curr!=null){
+            System.out.println(curr.getData());
+            System.out.println("b)borrar esta galleta,m)mantener la galleta,s)terminar de mostrar galletas");
+            char c =sc.next().charAt(0);
+            char low = Character.toLowerCase(c);
+            switch(low){
+                case 'b' -> {
+                    System.out.println("Galleta removida: "+get(indice));
+                    delete(indice);}
+                case 'm' -> curr = curr.getNext();
+                case 's' -> {
+                }
+            }
+            if(low == 's') break;
+        }
     }
 
     @Override

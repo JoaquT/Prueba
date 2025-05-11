@@ -17,6 +17,13 @@ public class FortuneCookieManager {
         return fortunas.get(index);
         
     }
+    public int size(){
+        return fortunas.size();
+    }
+    public void remove(int index){
+        fortunas.delete(index);
+    }
+    
     
     @Override
     public String toString() {
